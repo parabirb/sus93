@@ -2,4 +2,4 @@
 sus93 is a lightweight and shitty package manager for windows 93.
 
 ## installation
-import `install.js` into windows 93 and run it.
+open a terminal and run `$loader.script("https://cdn.jsdelivr.net/gh/parabirb/sus93/install.js");`
