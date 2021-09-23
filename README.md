@@ -1,5 +1,5 @@
 # sus93
-sus93 is a lightweight and shitty package manager for windows 93.
+sus93 is a lightweight and sussy package manager for windows 93.
 
 ## usage
 ### installation
