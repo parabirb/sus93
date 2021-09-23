@@ -17,7 +17,7 @@ Thanks!`;
     }
     if (localStorage[".sus93/repo"] === undefined) {
         $log("Thanks for using sus93!");
-        localStorage[".sus93/repo"] = "https://cdn.jsdelivr.net/gh/parabirb/sus93-repo/repo.json";
+        localStorage[".sus93/repo"] = "https://raw.githubusercontent.com/parabirb/sus93-repo/main/repo.json";
     }
 
     // load in some things
