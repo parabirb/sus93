@@ -22,7 +22,7 @@ Thanks!`;
 
     // load in some things
     let repoUrl = localStorage[".sus93/repo"];
-    let settings = { method: "GET", mode: "cors", cache: "no-store" };
+    let settings = { method: "GET", mode: "cors", cache: "reload" };
     $log("Fetching repository...");
     let repo = await fetch(repoUrl, settings).then(response => response.json());
     let help = `Help:
