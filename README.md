@@ -3,7 +3,7 @@ sus93 is a lightweight and sussy package manager for windows 93.
 
 ## usage
 ### installation
-open a terminal and paste [this](https://github.com/parabirb/sus93/blob/main/install.js), then hit enter.
+open a terminal and enter `$loader.script("https://cdn.jsdelivr.net/gh/parabirb/sus93/install.js");`
 ### updating
 if you already have sus93 installed, you can update by running `sus93 install sus93`.
 ### commands
