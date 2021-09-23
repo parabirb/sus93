@@ -71,8 +71,10 @@ Repo Description: ${repo.description}`);
                 delete localStorage[`.sus93/${argv[1]}`];
                 $log(`Removing ${argv[1]} from apps file...`);
                 apps.splice(apps.indexOf(argv[1]), 1);
+                localStorage[`.sus93/apps`] = JSON.stringify(apps);
                 $log(`Removing package...`);
                 le._apps[argv[1]] = undefined;
+                $log("Uninstallation complete!");
             }
         }
         else $log(help);
