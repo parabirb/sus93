@@ -22,8 +22,9 @@ Thanks!`;
 
     // load in some things
     let repoUrl = localStorage[".sus93/repo"];
+    let settings = { method: "GET", mode: "cors", cache: "no-store" };
     $log("Fetching repository...");
-    let repo = await fetch(repoUrl, { method: "GET", mode: "cors", cache: "no-store" }).then(response => response.json());
+    let repo = await fetch(repoUrl, settings).then(response => response.json());
     let help = `Help:
 sus93 list - List all packages available.
 sus93 repo - Display repository information.
@@ -46,7 +47,6 @@ Repo Description: ${repo.description}`);
         if (argv[0] === "install") {
             if (repo.packages[argv[1]] === undefined) {
                 $log("Error: Can't find the specified package!");
-                return;
             }
             else {
                 if (apps.indexOf(argv[1]) === -1) {
@@ -54,12 +54,25 @@ Repo Description: ${repo.description}`);
                     apps.push(argv[1]);
                 }
                 $log(`Downloading ${argv[1]}...`);
-                localStorage[`.sus93/${argv[1]}`] = await fetch(repo.packages[argv[1]]).then(response => response.text());
+                localStorage[`.sus93/${argv[1]}`] = await fetch(repo.packages[argv[1]], settings).then(response => response.text());
                 $log("Writing apps file...");
                 localStorage[`.sus93/apps`] = JSON.stringify(apps);
                 $log("Installing package...");
                 eval(localStorage[`boot/sus93.js`]);
                 setTimeout(() => $log("Installation complete!"), 5000);
+            }
+        }
+        else if (argv[0] === "uninstall") {
+            if (apps.indexOf(argv[1]) === -1) {
+                $log("Error: You don't have that package installed!");
+            }
+            else {
+                $log(`Deleting ${argv[1]}...`);
+                delete localStorage[`.sus93/${argv[1]}`];
+                $log(`Removing ${argv[1]} from apps file...`);
+                apps.splice(apps.indexOf(argv[1]), 1);
+                $log(`Removing package...`);
+                le._apps[argv[1]] = undefined;
             }
         }
         else $log(help);
