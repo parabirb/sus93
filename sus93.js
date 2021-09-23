@@ -28,6 +28,7 @@ Thanks!`;
     let help = `Help:
 sus93 list - List all packages available.
 sus93 repo - Display repository information.
+sus93 installed - List installed packages.
 sus93 install (package) - Installs (or upgrades) a package.
 sus93 uninstall (package) - Uninstalls a package.`;
     let apps = JSON.parse(localStorage[".sus93/apps"]);
@@ -41,6 +42,8 @@ ${Object.keys(repo.packages).join("\n")}`);
         else if (argv[0] === "repo") $log(`Repo URL: ${repoUrl}
 Repo Name: ${repo.name}
 Repo Description: ${repo.description}`);
+        else if (argv[0] === "installed") $log(`Installed packages:
+${apps.join("\n")}`);
         else $log(help);
     }
     else if (argv.length === 2) {

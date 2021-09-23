@@ -9,6 +9,7 @@ if you already have sus93 installed, you can update by running `sus93 install su
 ### commands
 * `sus93 list` - Lists packages available for installation
 * `sus93 repo` - Lists information about the sus93 repository
+* `sus93 installed` - List installed packages
 * `sus93 install (package)` - Installs or upgrades a package
 * `sus93 uninstall (package)` - Uninstalls a packaage
 
