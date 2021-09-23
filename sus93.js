@@ -68,7 +68,7 @@ Repo Description: ${repo.description}`);
             }
             else {
                 $log(`Deleting ${argv[1]}...`);
-                delete localStorage[`.sus93/${argv[1]}`];
+                localStorage.removeItem(`.sus93/${argv[1]}`);
                 $log(`Removing ${argv[1]} from apps file...`);
                 apps.splice(apps.indexOf(argv[1]), 1);
                 localStorage[`.sus93/apps`] = JSON.stringify(apps);
