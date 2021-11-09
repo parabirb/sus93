@@ -3,8 +3,8 @@ setTimeout(() => {
     for (const app of apps) {
         le._apps[app] = {
             exec: eval(localStorage[".sus93/" + app]),
-            terminal: true,
-            cli: true
+            terminal: false,
+            cli: false
         };
     }
-}, 5000);
+}, 150);

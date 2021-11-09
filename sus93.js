@@ -42,9 +42,9 @@ ${Object.keys(repo.packages).join("\n")}`);
         else if (argv[0] === "repo") $log(`Repo URL: ${repoUrl}
 Repo Name: ${repo.name}
 Repo Description: ${repo.description}`);
-        else if (argv[0] === "installed") $log(`Installed packages:
-${apps.join("\n")}`);
-        else $log(help);
+        else if (argv[0] === "installed") { localStorage[".sus93/repo_data"] = Object.keys(repo.packages).join(' '); $log(`Installed packages:
+${apps.join("\n")}`)};
+        
     }
     else if (argv.length === 2) {
         if (argv[0] === "install") {
@@ -62,7 +62,7 @@ ${apps.join("\n")}`);
                 localStorage[`.sus93/apps`] = JSON.stringify(apps);
                 $log("Installing package...");
                 eval(localStorage[`boot/sus93.js`]);
-                setTimeout(() => $log("Installation complete!"), 5000);
+                setTimeout(() => $log("Installation complete!"), 150);
             }
         }
         else if (argv[0] === "uninstall") {
@@ -80,6 +80,6 @@ ${apps.join("\n")}`);
                 $log("Uninstallation complete!");
             }
         }
-        else $log(help);
+        
     }
 })
