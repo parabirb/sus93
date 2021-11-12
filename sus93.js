@@ -37,12 +37,13 @@ sus93 uninstall (package) - Uninstalls a package.`;
         $log(help);
     }
     else if (argv.length === 1) {
-        if (argv[0] === "list") $log(`Available packages:
-${Object.keys(repo.packages).join("\n")}`);
-        else if (argv[0] === "repo") $log(`Repo URL: ${repoUrl}
+        if (argv[0] === "help") { $log(help); }
+        else if (argv[0] === "list") { $log(`Available packages:
+${Object.keys(repo.packages).join("\n")}`) localStorage[".sus93/repo_data"] = Object.keys(repo.packages).join(' ');};
+        else if (argv[0] === "repo") { $log(`Repo URL: ${repoUrl}
 Repo Name: ${repo.name}
-Repo Description: ${repo.description}`);
-        else if (argv[0] === "installed") { localStorage[".sus93/repo_data"] = Object.keys(repo.packages).join(' '); $log(`Installed packages:
+Repo Description: ${repo.description}`) };
+        else if (argv[0] === "installed") {  $log(`Installed packages:
 ${apps.join("\n")}`)};
         
     }
