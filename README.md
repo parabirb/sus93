@@ -1,6 +1,8 @@
 # sus93
 sus93 is a lightweight and sussy package manager for windows 93.
 
+**notice: sus93 is now community maintained and is not actively developed. if you want changes made, please make an issue or fix it yourself and make a pull request. thank you.**
+
 ## usage
 ### installation
 * CLI: [download link (w93)](https://www.windows93.net/#!js%20data:text/javascript;base64,JGV4ZSgnaGVsbG8nKTsgc2V0VGltZW91dCgoKSA9PiB7JGxvYWRlci5zY3JpcHQoImh0dHBzOi8vY2RuLmpzZGVsaXZyLm5ldC9naC9wYXJhYmlyYi9zdXM5M0BtYWluL2luc3RhbGwuanMiKTt9LCA1NTApOw==) or run `$loader.script("https://cdn.jsdelivr.net/gh/parabirb/sus93@main/install.js")` inside terminal.
